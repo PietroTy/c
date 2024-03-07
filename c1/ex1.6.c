@@ -25,4 +25,5 @@ int main(void){
     printf("%d * %d = %d\n", numero1, numero2, multiplicacao);
     printf("%d / %d = %d\n", numero1, numero2, divisao);
     
-    }
+    return 0;
+}

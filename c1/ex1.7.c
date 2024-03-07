@@ -16,4 +16,5 @@ int main(void){
     printf("Perimetro = %d\n", P);
     printf("Area = %d\n", A);
     
-    }
+    return 0;
+}
