@@ -1,17 +1,18 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-int n;
-
 int main(void){
+
+    int n;
+
+    printf("Forneca um numero maior ou igual a zero: ");
+    scanf("%d", &n);
 
     if ( n >= 0 ) {
 
-        for ( int i = 15; i <= 30; i++ ) {
+        for ( int i = 0; i <= n; i++ ) {
 
-        n = i * i;
-
-        printf("%d ", n);
+            printf("%d ", i);
 
         }
 
@@ -20,8 +21,6 @@ int main(void){
          printf("Valor incorreto (negativo)");
 
     }
-
-   
 
     return 0;
 }
