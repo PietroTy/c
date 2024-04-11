@@ -1,32 +1,68 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-int main(void){
+int main( void ) {
 
-    int altura;
+    int a;
 
-    printf("Altura: ");
-    scanf("%d", &altura);
+    printf( "Altura: " );
+    scanf( "%d", &a );
 
-    for ( int i = 1; i >= altura; i-- ) {
+    if( a >= 0) {
+ 
+        for( int i = 1 ; i <= a ; i++ ) {
 
-       for ( int j = 1; j <= altura - i; j++ ) {
+            for( int j = 1 ; j <= a - i ; j++ ) {
 
-        printf(" ");
+                printf( " " );
+
+            }
+
+            for( int j = 1 ; j <= i ; j++ ) {
+
+                printf( "*" );
+
+            }
+
+            for( int j = 1 ; j <= i - 1 ; j++ ) {
+
+                printf( "*" );
+
+            }
+
+            printf( "\n" );
 
         }
-        for ( int j = 1; i <= i; i++ ) {
 
-        printf("*");
+    } 
+    
+    else if( a <= 0 ) {
 
-        }
-        for ( int j = 1; j <= i - 1; j++ ) {
+        a = -a;
 
-        printf("*");
+        for( int i = a ; i >= 1 ; i-- ) {
 
-        }
+            for( int j = 1 ; j <= a - i ; j++ ) {
 
-        printf("\n");
+                printf(" ");
+
+            }
+
+            for( int j = 1 ; j <= i ; j++ ) {
+
+                printf( "*" );
+
+            }
+
+            for( int j = 1 ; j <= i - 1 ; j++ ) {
+
+                printf( "*" );
+
+            }
+
+            printf( "\n" );
+        } 
+
 
     }
 
