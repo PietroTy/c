@@ -5,9 +5,7 @@ int main( void )    {
 
     int n1;
     int n2;
-    int r;
     char d;
-
 
     do {
 
@@ -17,22 +15,21 @@ int main( void )    {
         printf( "N2: " );
         scanf( "%d", &n2 );
 
-        r = n1 / n2;
+        while ( n2 == 0 ){
 
-        if ( n2 != 0 ){
+            printf( "Nao existe divisao inteira por zero!\n" );
 
-            printf( "%d / %d = %d", n1, n2, r )
-
-        } else {
-
-            printf( "Nao existe divisao inteira por zero!" )
+            printf( "Entre novamente com N2: " );
+            scanf( "%d", &n2 );
 
         }
+            
+        printf( "%d / %d = %d\n", n1, n2, n1 / n2 );
 
         printf( "Voce deseja realizar outro calculo? (S/N): " );
-        scanf( "%c", &d );
+        scanf( " %c", &d );
 
-    } while ( d != "N" );
+    } while ( d == 'S' );
 
     return 0;
 }
