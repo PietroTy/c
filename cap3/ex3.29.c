@@ -3,63 +3,33 @@
 
 int main( void )    {
 
-    float s;
-    int t;
-    float v;
-
+    int n1;
+    int n2;
+    char d;
 
     do {
 
-        printf( "Operacao desejada: " );
-        scanf( "%d", &t );
+        printf( "N1: " );
+        scanf( "%d", &n1 );
 
-        switch ( t ) {
+        printf( "N2: " );
+        scanf( "%d", &n2 );
 
-            case 1:
-                printf( "Valor a depositar: " );
-                scanf( "%f", &v);
-                s += v;
-                break;
+        while ( n2 == 0 ){
 
-            case 2:
-                printf( "Valor a sacar: " );
-                scanf( "%f", &v );
-                s -= v;
-                break;
+            printf( "Nao existe divisao inteira por zero!\n" );
 
-            case 3:
-                break;
-
-            default:
-                printf( "Operacao invalida.\n" );
-                break;
+            printf( "Entre novamente com N2: " );
+            scanf( "%d", &n2 );
 
         }
+            
+        printf( "%d / %d = %d\n", n1, n2, n1 / n2 );
 
-    } while ( t != 3 );
+        printf( "Voce deseja realizar outro calculo? (S/N): " );
+        scanf( " %c", &d );
 
-    printf( "Saldo final: " );
-
-    if ( s < 0 ) {
-
-        printf( "-" );
-    
-    }
-    printf( "R$%.2f\n", s < 0 ? - s : s );
-
-    if( s < 0 ) {
-
-        printf( "Conta devedora." );
-
-    } else if( s == 0 ) {
-
-        printf( "Sem saldo." );
-
-    } else if( s > 0 ) {
-
-        printf( "Conta preferencial." );
-
-    }
+    } while ( d == 'S' );
 
     return 0;
 }
