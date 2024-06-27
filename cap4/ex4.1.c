@@ -1,7 +1,9 @@
+//PietroTy//
 #include<stdio.h>
 #include<stdlib.h>
 
-int main( void ) {
+int main(void)
+{
 
 int n [5];
 int c [5];
