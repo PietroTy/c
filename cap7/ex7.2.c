@@ -1,37 +1,37 @@
 //PietroTy//
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
-int absoluto (int n);
+
+float areaCirculo (float r);
+float circunferenciaCirculo (float r);
 
 int main (void)   {
 
-    int N[5];
-    int A[5];
+    float r;
+    float A;
 
-    for ( int i = 0; i < 5; i++ ) {
+    printf( "Raio: " );
+    scanf( "%f", &r );
 
-        printf( "n%d: ", i );
-        scanf( "%d", &N[i] );
-        printf( "\n" );
-    }
-    for ( int i = 0; i < 5; i++ ) {
 
-        printf( "absoluto(%d) = %d", N[i], absoluto(N[i]));
-        printf( "\n" );
-    }
+    printf( "Area = %.02f\n", areaCirculo(r));
+    printf( "Circunferencia = %.02f\n", circunferenciaCirculo(r));
 
     return 0;
 }
 
-int absoluto (int n)   {
+float areaCirculo (float r)   {
 
-    if (n < 0) {
+    const double PI = acos(-1);
+    return PI * pow(r, 2);
 
-        return -n;
-    }
-    else {
+}
 
-        return n;
-    }
+float circunferenciaCirculo (float r)   {
+
+    const double PI = acos(-1);
+    return 2 * r * PI;
+
 }
