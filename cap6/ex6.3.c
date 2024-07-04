@@ -8,7 +8,7 @@ int main (void)   {
     float n;
 
     printf("Numero: ");
-    scanf("%d", &n);
+    scanf("%f", &n);
 
     printf("Maior inteiro mais proximo: %.02f\n", ceil(n));
     printf("Menor inteiro mais proximo: %.02f\n", floor(n));

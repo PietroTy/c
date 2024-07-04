@@ -5,35 +5,18 @@
 
 int main (void)   {
 
-    int a;
-    int b;
-    int c;
-    float D;
-    int x1;
-    int x2;
-    float S[2];
+    float b;
+    float e;
+    float r;
 
-    printf("a: ");
-    scanf("%d", &a);
-    printf("b: ");
-    scanf("%d", &b);
-    printf("c: ");
-    scanf("%d", &c);
+    printf("Base: ");
+    scanf("%f", &b);
+    printf("Expoente: ");
+    scanf("%f", &e);
 
-    D = pow(b, 2) - (4 * a * c);
-    S[1] = (-b - sqrt(D)) / 2 * a;
-    S[0] = (-b + sqrt(D)) / 2 * a;
+    r = pow(b, e);
 
-    printf("Delta: %.02f\n", D);
-
-    if (S[0] == S[1]){
-        printf("S = {%.02f}", S[0]);
-
-    }
-
-    else {
-        printf("S = {%.02f, %.02f}", S[1], S[0]);
-    }
+    printf("%.02f ^ %.02f = %.02f", b, e, r);
 
     return 0;
 }

@@ -9,9 +9,8 @@ int main (void)   {
     int b;
     int c;
     float D;
-    int x1;
-    int x2;
-    float S[2];
+    float x1;
+    float x2;
 
     printf("a: ");
     scanf("%d", &a);
@@ -20,21 +19,31 @@ int main (void)   {
     printf("c: ");
     scanf("%d", &c);
 
+    if (a <= 0 || b <= 0 || c <= 0){
+        printf("Nao existe equacao do segundo grau!");
+
+        return 0;
+    }
+
     D = pow(b, 2) - (4 * a * c);
-    S[1] = (-b - sqrt(D)) / 2 * a;
-    S[0] = (-b + sqrt(D)) / 2 * a;
+    x1 = (-b - sqrt(D)) / 2 * a;
+    x2 = (-b + sqrt(D)) / 2 * a;
 
     printf("Delta: %.02f\n", D);
 
-    if (S[0] > 0 || S[1] > 0){
 
-        if (S[0] == S[1]){
-            printf("S = {%.02f}", S[0]);
-        }
-        else {
-            printf("S = {%.02f, %.02f}", S[1], S[1]);
-        }
+
+    if (D < 0){
+        printf("S = {}");
     }
+    else if (D == 0){
+        printf("S = {%.02f}", x1);
+
+    }
+    else {
+        printf("S = {%.02f, %.02f}", x1, x2);
+    }
+    
     
 
     return 0;
