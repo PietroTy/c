@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void maiorNumero (float* N1, float* N2);
+float maiorNumero (float N1, float N2);
 
 int main (void)   {
 
@@ -15,16 +15,16 @@ int main (void)   {
         scanf( "%f", &N1[i] );
 
 
-        if (N1 <= 0){
+        if (N1[i] <= 0){
 
             do {
 
             printf( "Entre com um valor positivo!\n" );
             printf( "n1[%d]: ", i );
-            scanf( "%f", &N1 );
+            scanf( "%f", &N1[i] );
 
 
-            } while( N1 <= 0 );
+            } while( N1[i] <= 0 );
         }
 
         printf( "\n" );
@@ -33,16 +33,16 @@ int main (void)   {
         scanf( "%f", &N2[i] );
 
 
-        if (N2 <= 0){
+        if (N2[i] <= 0){
 
             do {
 
             printf( "Entre com um valor positivo!\n" );
             printf( "n2[%d]: ", i );
-            scanf( "%f", &N2 );
+            scanf( "%f", &N2[i] );
 
 
-            } while( N2 <= 0 );
+            } while( N2[i] <= 0 );
         }
 
         printf( "\n" );
@@ -50,14 +50,13 @@ int main (void)   {
 
     for ( int i = 0; i < 5; i++ ) {
 
-        if(N1 != N2){
+        if(N1[i] != N2[i]){
 
-            printf( "%.02f, %.02f: O maior valor e ", N1, N2);
-            maiorNumero(N1, N2);
+            printf( "\n%.02f, %.02f: O maior valor e %.02f", N1[i], N2[i], maiorNumero(N1[i], N2[i]));
         }
         else {
 
-            printf( "%.02f, %.02f: Eles sao iguais", N1, N2);
+            printf( "\n%.02f, %.02f: Eles sao iguais", N1[i], N2[i]);
         }
     }
 
@@ -65,14 +64,14 @@ int main (void)   {
     return 0;
 }
 
-void maiorNumero (float* N1, float* N2)   {
+float maiorNumero (float N1, float N2)   {
 
     if (N1 > N2) {
 
-    printf( "%.02f", N1);    
+        return N1;
     }
     else {
 
-    printf( "%.02f", N2);    
+        return N2;
     }
 }
