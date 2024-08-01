@@ -8,8 +8,13 @@ int main(void){
 
     char string[41];
 
-    printf("String: ");
+    printf("Nome: ");
     fgets( string, 41, stdin );
     string[strlen(string)-1] = '\0';
-    printf("%c, %c, %c, %c.", string[0], string[1], string[2], string[3]);
+    
+    for(int i = 0; i < strlen(string); i++){
+
+        printf("%s\n", string);
+
+    }
 }
