@@ -1,14 +1,17 @@
+//PietroTy//
 #include <stdio.h>
 #include <stdlib.h>
 
 typedef struct Data{
+
     int dia;
     int mes;
     int ano;
-} Data;
 
-int compararData(const Data * d1, const Data *d2);
-void imprimirData(const Data *data);
+} Data;
+int compararData( const Data *d1, const Data *d2 );
+
+void imprimirData( const Data *data );
 
 int main(void){
 
@@ -18,25 +21,35 @@ int main(void){
     printf("Data 1\n");
     printf("    dia: ");
     scanf("%d", &d1.dia);
+
     printf("    mes: ");
     scanf("%d", &d1.mes);
+
     printf("    ano: ");
     scanf("%d", &d1.ano);
+
+
 
     printf("Data 2\n");
     printf("    dia: ");
     scanf("%d", &d2.dia);
+
     printf("    mes: ");
     scanf("%d", &d2.mes);
+
     printf("    ano: ");
     scanf("%d", &d2.ano);
+
+
 
     int comp = compararData(&d1, &d2);
     if(comp < 0){
         imprimirData(&d1);
         printf(" <= ");
         imprimirData(&d2);
-    } else{
+    }
+    
+    else{
         imprimirData(&d2);
         printf(" <= ");
         imprimirData(&d1);       
@@ -49,17 +62,23 @@ int main(void){
 int compararData(const Data * d1, const Data *d2){
     if(d1->ano < d2->ano){
         return -1;
-    } else if(d1->ano > d2->ano){
+    }
+    else if(d1->ano > d2->ano){
         return 1;
-    } else if(d1->mes < d2->mes){
+    }
+    else if(d1->mes < d2->mes){
         return -1;
-    } else if(d1->mes > d2->mes){
+    }
+    else if(d1->mes > d2->mes){
         return 1;
-    } else if(d1->dia < d1->dia){
+    }
+    else if(d1->dia < d1->dia){
         return -1;
-    } else if(d1->dia > d2->dia){
+    }
+    else if(d1->dia > d2->dia){
         return 1;
-    } else{
+    }
+    else{
         return 0;
     }
 }
