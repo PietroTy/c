@@ -1,15 +1,44 @@
-//PietroTy//
-#include<stdio.h>
 #include<stdlib.h>
-#include<ctype.h>
+#include<stdio.h>
 #include<string.h>
 
-int main(void){
+int contarOcorrencias(const char *str, char c);
 
-    char string[41];
+int main(void)
+{
+    #define T 41
 
-    printf("String: ");
-    fgets( string, 41, stdin );
-    string[strlen(string)-1] = '\0';
-    printf("%c, %c, %c, %c.", string[0], string[1], string[2], string[3]);
+    char str[T];
+
+    int maiuscula = 65; 
+    int minuscula = 97;
+
+    printf("Frase: ");
+    fgets(str, T, stdin);
+    str[strlen(str) - 1] = '\0';
+
+    for(int i = 0; i < 5; i++)
+    {
+        int ocorrencias = contarOcorrencias(str, maiuscula) + contarOcorrencias(str, minuscula);
+        printf("%c/%c: %d\n", maiuscula, minuscula, ocorrencias);
+
+        maiuscula++;
+        minuscula++;
+    }
+
+    return 0;
+}
+
+int contarOcorrencias(const char *str, char c)
+{  
+    int k = 0;
+    
+    for(int i = 0; i < strlen(str); i++)
+    {
+        if(str[i] == c)
+        {
+            k++;
+        }
+    }
+    return k;
 }

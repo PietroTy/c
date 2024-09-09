@@ -1,15 +1,32 @@
-//PietroTy//
-#include<stdio.h>
-#include<stdlib.h>
-#include<ctype.h>
-#include<string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+void inverter (char *destino, const char *origem);
 
 int main(void){
 
-    char string[41];
+    char string1[41];
+    char string2[41];
 
     printf("String: ");
-    fgets( string, 41, stdin );
-    string[strlen(string)-1] = '\0';
-    printf("%c, %c, %c, %c.", string[0], string[1], string[2], string[3]);
+    fgets( string1, 41, stdin);
+    string1[strlen(string1)-1] = '\0';
+
+    inverter(string2, string1);
+
+    printf( "Invertida: %s\n", string2);
+
+    return 0;
+}
+
+void inverter (char *destino, const char *origem){
+    int t = strlen (origem);
+    int k = 0;
+
+    for( int i = t -1; i >= 0; i--){
+        destino[k] = origem[i];
+        k++;
+    }
+    destino[k] = '\0';
 }
